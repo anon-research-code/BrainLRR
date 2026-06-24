@@ -1,0 +1,24 @@
+__pycache__/
+*.pyc
+.vscode/
+.idea/
+
+# data and large artifacts
+datasets/
+data/
+*.npy
+*.pt
+*.ckpt
+
+# experiment outputs
+result/
+results/
+saved_models/
+llm_finetune/results/
+outputs/
+multirun/
+wandb/
+*.log
+
+# env
+.env

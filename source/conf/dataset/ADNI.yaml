@@ -1,0 +1,13 @@
+name: adni
+batch_size: 16
+test_batch_size: 16
+val_batch_size: 16
+train_set: 0.7
+val_set: 0.1
+path: ./datasets/ADNI_CC200.npy
+# label_mode options:
+#   nc_vs_ad  — NC(191) vs AD(132),       total=323
+#   nc_vs_mci — NC(191) vs MCI(336),      total=527
+label_mode: nc_vs_ad
+stratified: True
+drop_last: True

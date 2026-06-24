@@ -1,0 +1,15 @@
+name: parkinson
+batch_size: 8
+test_batch_size: 8
+val_batch_size: 8
+train_set: 0.7
+val_set: 0.1
+# Options:
+#   ./datasets/pd_combined.npy   (183 subjects, all datasets)
+#   ./datasets/ds000245.npy      (45 subjects)
+#   ./datasets/neurocon.npy      (43 subjects)
+#   ./datasets/ds005892.npy      (55 subjects)
+#   ./datasets/taowu.npy         (40 subjects)
+path: ./datasets/pd_combined.npy
+stratified: True
+drop_last: False
