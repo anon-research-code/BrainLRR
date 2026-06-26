@@ -16,7 +16,7 @@ scripts/         Training entry points
   train_BrainLRR.py          BrainLRR: node masking + LRR auxiliary loss
 
 roi_analysis/    ROI importance extraction and visualization scripts
-  extract_BrainLRR_importance.py  ROI importance from BNT checkpoints
+  extract_BrainLRR_importance.py  ROI importance from BrainLRR checkpoints
   visualize_rois_v5.py         Multi-dataset ROI brain plots (CC200, 200 ROIs)
 llm_finetune/    Fine-tuning scripts for Llama-3.1, BrainLM, BrainSegFounder,
                  ResNet50, and ViT on the same FC datasets

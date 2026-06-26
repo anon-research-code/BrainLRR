@@ -74,7 +74,7 @@ print(f"  Top-K      : {TOP_K}")
 print("\n✓ Loading ROI importance")
 if not IMPORTANCE_PATH.exists():
     raise FileNotFoundError(
-        f"\n❌  {IMPORTANCE_PATH} not found.\n"
+        f"\n  {IMPORTANCE_PATH} not found.\n"
         f"    Run the extraction script first:\n"
         f"      python Visualization/scripts/extract_v11_importance.py --dataset {args.dataset}\n"
         f"    This requires a saved model checkpoint for the dataset."

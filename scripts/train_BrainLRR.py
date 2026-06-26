@@ -156,7 +156,6 @@ class BrainNetworkTransformer(nn.Module):
 
         self.flatten_dim = sizes[-1] * config.dataset.node_sz
         # Split encoder (→128) and classifier (128→2) so LRR operates on
-        # the compact 128-dim embedding, matching GBT's intent.
         self.fc = nn.Sequential(
             nn.Linear(self.flatten_dim, 512), nn.LayerNorm(512), nn.GELU(),
             nn.Dropout(config.regularization.dropout),
@@ -432,7 +431,7 @@ if __name__ == "__main__":
     # ── Step 2: Final evaluation across seeds ────────────────
     print(f"\n{'='*60}")
     print(f" Final Evaluation  |  dataset={args.dataset.upper()}"
-          f"  seeds={args.seeds}  [BNT + Random Node Masking + LRR]")
+          f"  seeds={args.seeds}  [BrainLRR]")
     print(f"{'='*60}")
 
     results = []
@@ -486,7 +485,7 @@ if __name__ == "__main__":
     # ── Summary ──────────────────────────────────────────────
     df = pd.DataFrame(results)
     print(f"\n{'─'*40}")
-    print(f" Summary ({args.dataset.upper()}, n={len(args.seeds)} seeds)  [BNT + Random Node Masking + LRR]")
+    print(f" Summary ({args.dataset.upper()}, n={len(args.seeds)} seeds)  [BrainLRR]")
     print(f"{'─'*40}")
     for m in ["acc", "auc", "sen", "spe", "f1"]:
         print(f"  {m.upper():5}: {df[m].mean():.4f} ± {df[m].std():.4f}")

@@ -6,8 +6,7 @@ classification task.
 
 ## Files
 
-- `zero_shot.py`: main experiment script. The fine-tuning implementation is in
-  `run_vision_finetune`.
+- `zero_shot.py`: Evaluation of FMs and task-specific models on ABIDE under zero-shot, few-shot, linear-probe, fine-tuning.
 
 ## Data
 

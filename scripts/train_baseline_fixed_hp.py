@@ -1,4 +1,4 @@
-# BNT baseline, with optional fixed hyperparameters.
+# Baseline, with optional fixed hyperparameters.
 # Same as train_baseline.py, but with optional --lr/--wd to skip the Optuna
 # search and use a fixed (lr, weight_decay) directly — for testing whether a
 # "good" lr/wd point found for the BrainLRR run (7.74e-05/0.0235) also
@@ -421,7 +421,7 @@ if __name__ == "__main__":
     # ── Step 2: Final evaluation across seeds ────────────────
     print(f"\n{'='*60}")
     print(f" Final Evaluation  |  dataset={args.dataset.upper()}"
-          f"  seeds={args.seeds}  [BNT baseline — no node masking]")
+          f"  seeds={args.seeds}  [Baseline — no node masking]")
     print(f"{'='*60}")
 
     results = []
@@ -454,7 +454,7 @@ if __name__ == "__main__":
     # ── Summary ──────────────────────────────────────────────
     df = pd.DataFrame(results)
     print(f"\n{'─'*40}")
-    print(f" Summary ({args.dataset.upper()}, n={len(args.seeds)} seeds)  [BNT baseline]")
+    print(f" Summary ({args.dataset.upper()}, n={len(args.seeds)} seeds)  [Baseline]")
     print(f"{'─'*40}")
     for m in ["acc", "auc", "sen", "spe", "f1"]:
         print(f"  {m.upper():5}: {df[m].mean():.4f} ± {df[m].std():.4f}")

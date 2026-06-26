@@ -40,7 +40,7 @@ DATASET_PATHS = {
     "adni_nc_mci": DATASETS_DIR / "ADNI_NC_MCI.npy",
 }
 
-# ─── Inline BrainNetworkTransformer — copied to match
+# ─── Inline BrainNetworkTransformer —
 
 
 class TransPoolingEncoder(nn.Module):
@@ -205,7 +205,7 @@ def main():
 
     ckpt_paths = sorted(models_dir.glob("seed_*/model.pt"))
     if not ckpt_paths:
-        print(f"❌  No checkpoints found in {models_dir}")
+        print(f"  No checkpoints found in {models_dir}")
         print(f"    Re-run training with model saving enabled:")
         print(f"      python scripts/train_BrainLRR.py --dataset {args.dataset} ...")
         sys.exit(1)
@@ -253,7 +253,7 @@ def main():
     np.save(output_dir / "all_runs.npy", all_importances)
 
     print(f"\n{'='*60}")
-    print(f"✅  Done — {len(all_importances)} runs aggregated")
+    print(f"  Done — {len(all_importances)} runs aggregated")
     print(f"   Mean importance range: [{mean_imp.min():.6f}, {mean_imp.max():.6f}]")
     print(f"   Saved to: {output_dir}/")
     print(f"\nNext: run visualization")
